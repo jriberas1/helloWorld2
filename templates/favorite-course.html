@@ -1,0 +1,19 @@
+<!-- Inherit the shared design from the parent template -->
+{% extends "base.html" %}
+
+<!-- Set the browser tab title -->
+{% block page_title %}Favorite Course{% endblock %}
+
+<!-- Set the main page heading -->
+{% block page_head %}My Favorite Course{% endblock %}
+
+<!-- Display the favorite course passed through the URL -->
+{% block page_content %}
+    <p class="fs-5">You entered your favorite course as:</p>
+
+    <div class="alert alert-primary">
+        <strong>{{ subject }} {{ course_number }}</strong>
+    </div>
+
+    <p class="text-muted">Thank you for sharing your favorite course!</p>
+{% endblock %}
