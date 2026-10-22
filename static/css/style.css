@@ -1,33 +1,245 @@
-p{
+
+/* Original paragraph styling */
+p {
     color: darkblue;
     text-decoration: underline;
 }
 
-h2{
+/* Original heading styling */
+h2 {
     color: red;
     font-size: 3em;
 }
 
-/* Style for table that will add a border*/
+/* Style for tables by adding a border */
 table, td, th {
-    border-style:solid;
+    border-style: solid;
     border-width: 3px;
     border-color: #990000;
     border-collapse: collapse;
 }
 
-/* Style to make an ID*/
-#clouds{
+/* Style to make an ID */
+#clouds {
     color: lightblue;
     text-decoration: underline;
 }
 
-/*Style to make a class*/
-h.silver{
+/* Style to make a class */
+h.silver {
     font-size: 4em;
 }
 
-img.logo{
-    width:267px;
-    height:72px;
+/* Style the overall page */
+body {
+    background-color: #f4f6f9;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Center the content and add space around it */
+.page-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Style the main content box */
+.content-box {
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Style the main page heading */
+.page-heading {
+    color: #243b53;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Arrange contact form fields in two columns */
+.form-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Add space below each form field */
+.form-field {
+    margin-bottom: 5px;
+}
+
+/* Allow selected fields to use the full row */
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Style form labels */
+.form-label {
+    display: block;
+    color: #243b53;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Style text inputs and the message box */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Highlight a field when selected */
+.form-control:focus {
+    border-color: #526d82;
+    box-shadow: 0 0 0 0.2rem rgba(82, 109, 130, 0.2);
+    outline: none;
+}
+
+/* Style the main form button */
+.primary-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #243b53;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Change the button appearance when hovered over */
+.primary-button:hover {
+    background-color: #172b40;
+    color: white;
+}
+
+/* Style the instructions above the form */
+.form-instructions {
+    color: #555;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+/* Style the success message after submission */
+.success-message {
+    background-color: #e8f5e9;
+    border: 1px solid #b7dfb9;
+    border-radius: 6px;
+    padding: 18px;
+    margin-bottom: 25px;
+}
+
+/* Style the thank-you heading */
+.thank-you-heading {
+    color: #245b32;
+    font-size: 1.4em;
+    margin-bottom: 8px;
+}
+
+/* Style the success message description */
+.message-description {
+    color: #245b32;
+    text-decoration: none;
+    margin-bottom: 0;
+}
+
+/* Separate each submitted answer */
+.submitted-information {
+    margin-bottom: 18px;
+}
+
+/* Style submitted answers without underlining */
+.submitted-information p {
+    color: #333;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+/* Style the introduction to the favorite course */
+.course-introduction {
+    background-color: #f0f6ff;
+    border-left: 5px solid #4776a8;
+    padding: 12px 18px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Style the course description */
+.course-description {
+    color: #294968;
+    font-size: 1.1em;
+    text-decoration: none;
+    margin: 0;
+}
+
+/* Create a highlighted panel for the course */
+.course-display {
+    background: linear-gradient(135deg, #e4efff, #f5f9ff);
+    border: 1px solid #b9d2f0;
+    border-radius: 10px;
+    padding: 28px 20px;
+    margin-bottom: 22px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(36, 59, 83, 0.08);
+}
+
+/* Style the small label above the course name */
+.course-label {
+    color: #54769a;
+    font-size: 0.8em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+/* Make the course name stand out */
+.course-name {
+    color: #203e61;
+    font-size: 2.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Highlight the thank-you message */
+.course-thank-you-box {
+    background-color: #e8f6f1;
+    border: 1px solid #b7e3d3;
+    border-radius: 8px;
+    padding: 15px 18px;
+}
+
+/* Style the thank-you text */
+.course-thank-you {
+    color: #246b56;
+    text-decoration: none;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Display one form column on smaller screens */
+@media (max-width: 600px) {
+    .form-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .content-box {
+        padding: 20px;
+    }
+
+    .course-name {
+        font-size: 1.8em;
+    }
 }

@@ -2,18 +2,33 @@
 {% extends "base.html" %}
 
 <!-- Set the browser tab title -->
-{% block page_title %}Favorite Course{% endblock %}
+{% block title %}Favorite Course{% endblock %}
 
 <!-- Set the main page heading -->
-{% block page_head %}My Favorite Course{% endblock %}
+{% block heading %}My Favorite Course{% endblock %}
 
 <!-- Display the favorite course passed through the URL -->
-{% block page_content %}
-    <p class="fs-5">You entered your favorite course as:</p>
+{% block content %}
 
-    <div class="alert alert-primary">
-        <strong>{{ subject }} {{ course_number }}</strong>
+    <!-- Introduce the favorite course -->
+    <div class="course-introduction">
+        <p class="course-description">
+            You entered your favorite course as:
+        </p>
     </div>
 
-    <p class="text-muted">Thank you for sharing your favorite course!</p>
+    <!-- Highlight the course information -->
+    <div class="course-display">
+        <p class="course-label">YOUR FAVORITE COURSE</p>
+
+        <h2 class="course-name">{{ subject }} {{ course_number }}</h2>
+    </div>
+
+    <!-- Display a friendly thank-you message -->
+    <div class="course-thank-you-box">
+        <p class="course-thank-you">
+            Thank you for sharing your favorite course!
+        </p>
+    </div>
+
 {% endblock %}

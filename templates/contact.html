@@ -2,76 +2,78 @@
 {% extends "base.html" %}
 
 <!-- Set the browser tab title -->
-{% block page_title %}Contact Me{% endblock %}
+{% block title %}Contact Me{% endblock %}
 
 <!-- Set the main page heading -->
-{% block page_head %}Contact Me{% endblock %}
+{% block heading %}Contact Me{% endblock %}
 
 <!-- Display the form or the submitted information -->
-{% block page_content %}
+{% block content %}
 
     <!-- Show a thank-you message and submitted values -->
     {% if form_submitted %}
-        <div class="alert alert-success">
-            <h2 class="h4">Thank you for completing my form!</h2>
-            <p class="mb-0">Here is the information you submitted.</p>
+        <div class="success-message">
+            <h2 class="thank-you-heading">Thank you for completing my form!</h2>
+            <p class="message-description">Here is the information you submitted.</p>
         </div>
 
         <!-- Display the information entered by the user -->
-        <div class="mb-3">
+        <div class="submitted-information">
             <strong>First Name:</strong>
             <p>{{ request.form.get('first_name') }}</p>
         </div>
 
-        <div class="mb-3">
+        <div class="submitted-information">
             <strong>Last Name:</strong>
             <p>{{ request.form.get('last_name') }}</p>
         </div>
 
-        <div class="mb-3">
+        <div class="submitted-information">
             <strong>Email Address:</strong>
             <p>{{ request.form.get('email') }}</p>
         </div>
 
-        <div class="mb-3">
+        <div class="submitted-information">
             <strong>Message:</strong>
             <p>{{ request.form.get('message') }}</p>
         </div>
 
         <!-- Allow the user to return to the blank form -->
-        <a href="{{ url_for('contact') }}" class="btn btn-primary">Complete Form Again</a>
+        <a href="{{ url_for('contact') }}" class="primary-button">Complete Form Again</a>
 
     {% else %}
 
         <!-- Display the contact form before submission -->
-        <p class="text-muted">Please fill out the form below to get in touch.</p>
+        <p class="form-instructions">Please fill out the form below to get in touch.</p>
 
         <form action="{{ url_for('contact') }}" method="post">
-            <div class="row g-3">
-                <div class="col-md-6">
+            <div class="form-layout">
+
+                <div class="form-field">
                     <label for="first_name" class="form-label">First Name</label>
                     <input type="text" class="form-control" id="first_name" name="first_name" required>
                 </div>
 
-                <div class="col-md-6">
+                <div class="form-field">
                     <label for="last_name" class="form-label">Last Name</label>
                     <input type="text" class="form-control" id="last_name" name="last_name" required>
                 </div>
 
-                <div class="col-12">
+                <div class="form-field full-width">
                     <label for="email" class="form-label">Email Address</label>
                     <input type="email" class="form-control" id="email" name="email" required>
                 </div>
 
-                <div class="col-12">
+                <div class="form-field full-width">
                     <label for="message" class="form-label">Message</label>
                     <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
                 </div>
 
                 <!-- Submit the completed contact form -->
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                <div class="form-field full-width">
+                    <button type="submit" class="primary-button">Submit Form</button>
                 </div>
+
             </div>
         </form>
 
