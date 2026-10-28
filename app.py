@@ -11,9 +11,9 @@ from models import db, Student, Major
 # --------------------------------------------------
 app = Flask(__name__)
 
-# Use the existing database in the instance directory.
+# Use the existing database in the Instance directory.
 app.config['SQLALCHEMY_DATABASE_URI'] = (
-    'sqlite:///' + os.path.join(app.instance_path, 'university.db')
+    'sqlite:///' + os.path.join(app.Instance_path, 'university.db')
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'beyond_course_scope'
