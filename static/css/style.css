@@ -1,4 +1,3 @@
-
 /* Original paragraph styling */
 p {
     color: darkblue;
@@ -242,4 +241,72 @@ body {
     .course-name {
         font-size: 1.8em;
     }
+}
+
+/* Style the student tables */
+.table {
+    width: 100%;
+    margin-top: 20px;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+.table th {
+    background-color: #343a40;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.table td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+/* Add a subtle highlight when hovering over a student row */
+.table tbody tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Style the student form labels */
+.form-label {
+    margin-bottom: 8px;
+    color: #343a40;
+}
+
+/* Style the form input boxes and dropdowns */
+.form-control,
+.form-select {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #6c757d;
+    box-shadow: 0 0 5px rgba(108, 117, 125, 0.3);
+}
+
+/* Give buttons a consistent appearance */
+.btn {
+    border-radius: 6px;
+    padding: 8px 16px;
+    transition: background-color 0.2s ease;
+}
+
+/* Add spacing above the student form buttons */
+form .btn {
+    margin-top: 10px;
+}
+
+/* Keep success and error messages readable */
+.alert {
+    margin-top: 15px;
+    border-radius: 6px;
+}
+
+/* Make the student table easier to use on smaller screens */
+.table-responsive {
+    overflow-x: auto;
 }
